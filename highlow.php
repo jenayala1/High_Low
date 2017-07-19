@@ -1,19 +1,29 @@
 <?php
 
 
+
+// $min = 1;
+// $max = 100;
+// $a = int mt_rand(int $min, int $max);
 $a = 7;
 
 fwrite(STDOUT, "Guess a number between 1 - 100" .PHP_EOL );
 $userGuess = fgets(STDIN);
 
-if (userGuess > $a) {
-		fwrite(STDOUT, "Guess lower" .PHP_EOL);
+while ($userGuess != $a){
+
+	if ($userGuess > $a) {
+		fwrite(STDOUT, "Guess lower ".PHP_EOL);
 		$userGuess = fgets(STDIN);
 
-	} else if (userGuess < $a) {
+	} elseif ($userGuess < $a) {
 		fwrite(STDOUT, "Guess higher " .PHP_EOL);
 		$userGuess = fgets(STDIN);
-
-	} else {
-		fwrite(STDOUT, " Good guess! ");
 	}
+
+} if ($userGuess == $a) {
+	echo " Good guess, YOU WON!" . PHP_EOL;
+}
+		
+
+
