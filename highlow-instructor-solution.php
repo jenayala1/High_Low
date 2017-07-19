@@ -11,7 +11,8 @@ do {
 	$userGuess = trim(fgets(STDIN));
 
 	if (! is_numeric($userGuess)){
-		echo "That is not a number"
+		echo "That is not a number";
+		continue;
 	}
 	$numberOfGuesses += 1;
 
