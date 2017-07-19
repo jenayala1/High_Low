@@ -1,11 +1,10 @@
 <?php
 
+$min = 1;
+$max = 100;
 
+$a = mt_rand($min, $max);
 
-// $min = 1;
-// $max = 100;
-// $a = int mt_rand(int $min, int $max);
-$a = 7;
 
 fwrite(STDOUT, "Guess a number between 1 - 100" .PHP_EOL );
 $userGuess = fgets(STDIN);
@@ -22,7 +21,8 @@ while ($userGuess != $a){
 	}
 
 } if ($userGuess == $a) {
-	echo " Good guess, YOU WON!" . PHP_EOL;
+	echo " Good guess, YOU WON! Number of tries: " ;
+	echo count($userGuess) . PHP_EOL ;
 }
 		
 
