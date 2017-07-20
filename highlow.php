@@ -1,5 +1,13 @@
 <?php
 
+if ($argc ===3) {
+	echo 'please pass the min and max for the game' . PHP_EOL;
+	echo PHP_EOL;
+	echo "Usage: " . PHP_EOL;
+	echo " php high_low.php <min> <max>" . PHP_EOL;
+	exit;
+}
+
 $min = $argv[1];
 $max = $argv[2];
 $a = mt_rand($min, $max);
