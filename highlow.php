@@ -1,28 +1,29 @@
 <?php
 
-
-$a = mt_rand(1, 100);
+$min = $argv[1];
+$max = $argv[2];
+$a = mt_rand($min, $max);
 $attempts = 0;
-echo "Guess a number between 1 - 100" . PHP_EOL;
+echo "Guess a number between " . $min . " and " . $max . PHP_EOL;
+
 
 do {
-	echo "Guess a number between 1 - 100" . PHP_EOL;
 	$userGuess = trim(fgets(STDIN));
 
 
 	if (! is_numeric($userGuess)){
-		echo "That is not a number";
+		echo "That is not a number" . PHP_EOL;
 		continue;
 	}
 
 	$attempts += 1;
 
 	if ($userGuess > $a) {
-		echo "Guess lower ".PHP_EOL;
+		echo "Guess lower ". PHP_EOL;
 
 	} 
 	if ($userGuess < $a) {
-		echo "Guess higher " .PHP_EOL;
+		echo "Guess higher " . PHP_EOL;
 
 	}
 	if ($userGuess == $a) {
@@ -30,3 +31,10 @@ do {
 	}
 		
 } while ($userGuess != $a);
+
+
+
+var_dump($argc);
+var_dump($argv);
+
+
